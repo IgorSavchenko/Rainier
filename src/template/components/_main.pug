@@ -1,0 +1,78 @@
+mixin main()
+  main
+    
+    section#home(data-page="home" data-next="page-2" data-prev="null")
+      block header
+        +header()
+      h1= `${homeTitle}`
+      p= `${homeText}`
+      .layers
+        .layer-1
+        .layer-2
+        .layer-3
+        .layer-4.scene
+          div(data-depth="0.1")
+        .layer-5.scene
+          div(data-depth="0.1")
+        .layer-6.scene
+          div(data-depth="0.3")
+        .layer-7.scene
+          div(data-depth="0.2")
+        .layer-8
+    
+    section#page-2(data-page="page-2" data-next="null" data-prev="home")
+      block header
+        +header()
+      .container
+        .content
+          h2= `${aboutTitle}`
+          p= `${aboutText}`
+          a.button(href="#about" role="button" aria-label="About us") About us
+      aside.page__pagination
+        //- +svg('page-navigation')
+        +svg('path')
+        ul.page__pagination__list
+          li.page__pagination__item
+            a.page__pagination__link(href="index.html" target="_self") 1
+          li.page__pagination__item
+            a.page__pagination__link.is-active(href="#page-2" target="_self") 2
+          li.page__pagination__item
+            a.page__pagination__link(href="#page-3" target="_self") 3
+          li.page__pagination__item
+            a.page__pagination__link(href="#page-4" target="_self") 4
+          li.page__pagination__item
+            a.page__pagination__link(href="#page-5" target="_self") 5
+          li.page__pagination__item
+            a.page__pagination__link(href="#page-6" target="_self") 6
+          li.page__pagination__item
+            a.page__pagination__link(href="#page-7" target="_self") 7
+      ul.slider
+        li.slider__item
+          .layers(data-country="america")
+           .layer-1(data-country="america")
+           .layer-2(data-country="america")
+           .layer-3(data-country="america")
+           .layer-4
+        li.slider__item  
+          .layers(data-country="canada")
+           .layer-1(data-country="canada")
+           .layer-2(data-country="canada")
+           .layer-3(data-country="canada")
+           .layer-4
+        li.slider__item
+          .layers(data-country="mexico")
+           .layer-1(data-country="mexico")
+           .layer-2(data-country="mexico")
+           .layer-3(data-country="mexico")
+           .layer-4
+      .slider__pagination
+        .slider__pagination__underline
+        ul.slider__pagination__list
+          li.slider__pagination__item
+            button.slider__pagination__button(data-filter="america") America
+          li.slider__pagination__item
+            button.slider__pagination__button.is-active(data-filter="canada") Canada   
+          li.slider__pagination__item
+            button.slider__pagination__button(data-filter="mexico") Mexico
+      a.button.button--scroll(href="#home" role="button")
+        +svg('arrow')  

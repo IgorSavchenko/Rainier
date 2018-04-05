@@ -1,0 +1,62 @@
+.social {
+  position: static;
+  &__list {
+    @include resetListStyles;
+    justify-content: center;
+    @include desktop-min {
+      justify-content: flex-start;
+    }
+  }
+  &__item {
+    margin-right: 45px;
+  }
+  &__link {
+    @include resetLinkStyles;
+    svg {
+      display: block;
+      max-width: 12px;
+      min-height: 12px;
+      path {
+      }
+    }
+  }
+  &--header {
+    // order: 2;
+    // align-self: flex-end;
+    position: relative;
+    top: 140px;
+    @include tablet-min {
+      position: static;
+      margin-top: 40px;
+      margin-left: -15px;
+    }
+    @include desktop-min {
+      display: none;
+    }
+    .social__item {
+      margin: 0 15px;
+    }
+    svg {
+      fill: #0a3e51;
+    }
+  }
+  &--footer {
+    margin-bottom: 30px;
+    @include tablet-min {
+      margin-bottom: 0;
+      position: absolute;
+      left: 150px;
+      top: 50px;
+      justify-content: flex-start;
+    }
+    @include desktop-min {
+      left: 209px;
+      top: 55px;
+    }
+    svg {
+      // max-width: 11px;
+      // max-height: 9px;
+      fill: #ffffff;
+    }
+  }
+}

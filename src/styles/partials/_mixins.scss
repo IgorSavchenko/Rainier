@@ -1,0 +1,44 @@
+//Reset defaul element styles
+@mixin resetLinkStyles {
+  text-decoration: none;
+  color: #000000;
+  font: $font-regular;
+}
+
+@mixin resetListStyles {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+}
+
+//Media queries (mobile first)
+@mixin tablet-min{
+	@media (min-width: #{$tablet-p-width}){
+		@content;
+	}
+}
+@mixin tablet-landscape-min{
+	@media (min-width: #{$tablet-l-width}){
+		@content;
+	}
+}
+@mixin tablet-only {
+  @media (min-width: #{$tablet-p-width}) and (max-width: #{$desktop-width}) {
+    @content;
+  }
+}
+@mixin desktop-min{
+	@media (min-width: #{$desktop-width}){
+		@content;
+	}
+}
+@mixin tv-min{
+	@media (min-width: #{$tv-width}){
+		@content;
+	}
+}
+@mixin retina{
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){
+    @content;
+  }
+}

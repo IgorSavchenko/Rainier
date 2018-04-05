@@ -1,0 +1,37 @@
+mixin header()
+    header.header
+      .container
+        .block.block--left
+          a.header__logo(href="index.html", target="_self")
+            +svg('logo-header')
+          .header__burger
+            +svg('menu')
+            +svg('close')
+        .block.block--right
+          .block.block--popup
+            nav.menu.menu--header
+              ul.menu__list
+                li.menu__item
+                  a.menu__link(href="#about", target="_self") About us
+                li.menu__item
+                  a.menu__link(href="#services", target="_self")  Services
+                li.menu__item
+                  a.menu__link(href="#join", target="_self")  Join Us
+                li.menu__item
+                  a.menu__link(href="#contacts", target="_self")  Contacts
+                li.menu__item
+                  a.menu__link(href="#subscribe", target="_self") Sign in
+            .social.social--header
+              ul.social__list
+                li.social__item
+                  a.social__link(href=`${socialLink1URL}` target="_blank")
+                    +svg(`${socialLink1}`)
+                li.social__item
+                  a.social__link(href=`${socialLink1URL}` target="_blank")
+                    +svg(`${socialLink2}`)
+                li.social__item
+                  a.social__link(href=`${socialLink1URL}` target="_blank")
+                    +svg(`${socialLink3}`)
+          .block
+            a.header__reference(href=`callto: ${phoneNumber}`)= `${phoneNumber}`
+            a.button.button--header(href="#" role="button" aria-label="Request a quote") Request a quote

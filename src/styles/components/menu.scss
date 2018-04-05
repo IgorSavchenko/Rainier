@@ -1,0 +1,110 @@
+.menu {
+  display: flex;
+  &__list {
+    @include resetListStyles;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__item {
+      // margin: 0 25px;
+  }
+  &__link {
+    @include resetLinkStyles;
+    display: block;
+    font-weight: 700;
+    line-height: 18px;
+    padding-bottom: 5px;
+    // transition: border 0.2s;
+    &:hover, &:active {
+      // border-bottom: 1px solid;
+      text-decoration: underline;
+    }
+  }
+  &--header {
+    // display: none;
+    // position: absolute;
+    // top: 90px;
+    // left: 0;
+    // right: 0;
+    @include desktop-min {
+      // display: flex;
+      position: static;
+      margin-left: 90px;
+    }
+     .menu__list {
+      flex-direction: column;
+      // justify-content: flex-start;
+      // align-items: center;
+      // justify-content: center;
+      // background-color: rgba(#ffffff, 0.95);
+      // width: 100%;
+      @include tablet-min {
+        align-items: flex-start;
+      }
+      @include desktop-min {
+        flex-direction: row;
+        // width: auto;
+        // background-color: inherit;
+      }
+      .menu__item {
+        // display: block;
+        // width: 100%;
+        // text-align: center;
+        margin: 15px 0;
+        @include desktop-min {
+          margin: 0 50px 0 0;
+          width: auto;
+        }
+      }
+      .menu__link {
+        font-size: 14px;
+        color: #4b4a4a;
+        &[href="#subscribe"] {
+          color:#3d6bc7;
+        }
+        &:hover, &:active {
+          // border-bottom: 2px solid;
+          text-decoration: underline;
+        }
+      }
+    }
+    &.is-active {
+      display: flex;
+    }
+  }
+  &--footer {
+    // width: 100%;
+    margin: 30px 0;
+    justify-content: space-between;
+    @include tablet-min {
+      justify-content: flex-start;
+      margin: 0;
+      position: absolute;
+      left: 150px;
+      top: 2px;
+    }
+    @include desktop-min {
+      left: 209px;
+      top: 12px;
+    }
+    .menu__list {
+      width: 100%;
+      @include tablet-min {
+        width: auto;
+      }
+      // justify-content: space-between;
+    }
+    .menu__item:not(:last-of-type) {
+      @include tablet-min {
+        margin-right: 30px;
+      }
+    }
+    .menu__link {
+      font-size: 10px;
+      color: #ffffff;
+      @include tablet-min {
+        font-size: 12px;
+      }
+    }
+  }
+}

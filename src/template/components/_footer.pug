@@ -1,0 +1,36 @@
+mixin footer()
+    footer.footer
+      .container
+        .footer__block
+          .footer__logo
+            +svg('logo-footer')
+          a.button.button--footer(href="#" role="button" aria-label="Get in touch") Get in touch
+        nav.menu.menu--footer
+          ul.menu__list
+            li.menu__item
+              a.menu__link(href="#about", target="_self") About us
+            li.menu__item
+              a.menu__link(href="#services", target="_self")  Services
+            li.menu__item
+              a.menu__link(href="#join", target="_self")  Join Us
+            li.menu__item
+              a.menu__link(href="#contacts", target="_self")  Contacts
+            li.menu__item
+              a.menu__link(href="#subscribe", target="_self") Privacy policy
+        .social.social--footer
+          ul.social__list
+            li.social__item
+              a.social__link(href=`${socialLink1URL}` target="_blank")
+                +svg(`${socialLink1}`)
+            li.social__item
+              a.social__link(href=`${socialLink1URL}` target="_blank")
+                +svg(`${socialLink2}`)
+            li.social__item
+              a.social__link(href=`${socialLink1URL}` target="_blank")
+                +svg(`${socialLink3}`)
+        .footer__block
+          p= `${copyrightText}`
+          .footer__company
+            span= "by "
+            a.footer__link(href="http://vintage.com.ua" target="_blank")
+              +svg('vintage-logo')

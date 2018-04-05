@@ -1,0 +1,53 @@
+.footer {
+  // height: 202px;
+  padding: 30px 0 20px;
+  background: #09334c;
+  @include tablet-min {
+    padding-top: 45px;
+  }
+  @include desktop-min {
+    // height: 150px;
+  }
+  .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-around;
+  }
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // margin: 30px 0;
+    @include tablet-min {
+      margin-bottom: 20px;
+    }
+  }
+  &__logo {
+    align-self: flex-start;
+    svg {
+      display: block;
+      width: 75px;
+	    height: 17px;
+      @include desktop-min {
+        width: 100px;
+        height: 23px;
+      }
+    }
+  }
+  p, span {
+    font-size: 10px;
+    line-height: 1em;
+    color: #ffffff;
+  }
+  &__link {
+    @include resetLinkStyles;
+    margin-left: 10px;
+    svg {
+      // display: block;
+      max-width: 11px;
+      max-height: 15px;
+      fill: #ffffff;
+    }
+  }
+}

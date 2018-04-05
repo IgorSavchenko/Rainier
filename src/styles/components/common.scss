@@ -1,0 +1,44 @@
+body {
+  position: relative;
+  background-color: #ffffff;
+  font: $font-regular;
+  margin: 0 auto;
+  // max-width: 1920px;
+}
+.container {
+  min-width: 290px;
+  padding: 0 15px;
+  margin: 0 auto;
+  @include tablet-min {
+    padding: 0 30px;
+  }
+  @include tv-min {
+    padding: 0 50px;
+  }
+}
+.onScroll {
+  display: none;
+  @include desktop-min {
+    // display: block;
+    position: fixed;
+    width: 1px;
+    height: 1px;
+    border: 1px solid #3d6bc7;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    background-color: #3d6bc7;
+    animation: onScroll 1.5s;
+    animation-fill-mode: forwards;
+    z-index: 2;
+    outline: none;
+  }
+}
+// #canvas {
+//   position: fixed;
+//   // display: none;
+//   width: 100vw;
+//   height: 100px;
+//   z-index: 2;
+//   overflow: scroll;
+// }

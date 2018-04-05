@@ -1,0 +1,189 @@
+// home page styles
+#home {
+  position: relative;
+  // min-height: calc(100vh - 102px);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 567px;
+  @include tablet-min {
+    min-height: 1022px;
+  }
+  @include desktop-min {
+    min-height: 719px;
+  }
+  h1 {
+    margin: 105px 15px 15px;
+    font-size: 40px;
+    line-height: 50px;
+    color: #0a3e51;
+    max-width: 448px;
+    text-align: center;
+    animation: from__top__to__bottom 1s;
+    @include tablet-min {
+      font-size: 70px;
+      line-height: 80px;
+      margin-top: 240px;
+      margin-bottom: 40px;
+    }
+    @include desktop-min {
+      margin-top: 200px;
+      margin-bottom: 45px;
+
+    }
+    @include tv-min {
+      margin-top: 150px;
+    }
+  }
+  p {
+    position: relative;
+    font-size: 14px;
+    line-height: 48px;
+    font-weight: 900;
+    color: #3d6bc7;
+    opacity: 0;
+    animation: from__top__to__bottom 1s 0.5s;
+    animation-fill-mode: forwards;//opacity = 1
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      background-color: #3d6bc7;
+      border-radius: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 4px;
+      animation: pulse 1.5s infinite;
+    }
+    &::before {
+      top: 70px;
+      animation-delay: 0.3s;
+    }
+  }
+  .layers {
+    position: absolute;
+    left: -200px;
+    right: 0;
+    height: 100%;
+    z-index: -1;
+    @include desktop-min {
+      left: 0;
+    }
+    @include tv-min {
+      left: 250px;
+      right: -250px;
+    }
+  }
+  [class^="layer-"] {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-repeat: no-repeat;
+  }
+  .layer-1 {
+    height: 225px;
+    left: -300px;
+    background-image: url("../img/main_1part.png");
+    // background-position: left 65% top;
+    transform: translateY(0);
+    animation: from__bottom__to__top 1s;
+  }
+  .layer-2 {
+    height: 406px;
+    width: 967px;
+    bottom: 130px;
+    left: -300px;
+    background-image: url("../img/main_mountains_left.png");
+    transform: translateX(0);
+    animation: from__far__left__to__right 2s;
+    z-index: -1;
+    // background-position: left -50% top;
+  }
+  .layer-3 {
+    height: 207px;
+    width: 652px;
+    bottom: 135px;
+    left: 900px;
+    background-image: url("../img/main_mountain_right.png");
+    transform: translateX(0);
+    animation: from__far__right__to__left 2s;
+    z-index: -1;
+    // background-position: right top;
+  }
+  .layer-4 {
+    bottom: 260px;
+    left: 1020px;
+    transform: translateX(0);
+    opacity: 0;
+    animation: grow__up 1s 1.5s;
+    animation-fill-mode: forwards;//opacity = 1
+    z-index: -2;
+    // background-position: right 12% top;
+    div {
+      height: 90px;
+      width: 385px;
+      background-image: url("../img/main_cloud_sun.png");
+
+    }
+  }
+  .layer-5 {
+    bottom: 365px;
+    left: -50px;
+    transform: translateX(0);
+    opacity: 0;
+    animation: from__left__to__right 1s 1.5s;
+    animation-fill-mode: forwards;//opacity = 1
+    z-index: -3;
+    // background-position: left -5% top;
+    div {
+      height: 97px;
+      width: 524px;
+      background-image: url("../img/main_clouds.png");
+    }
+  }
+  .layer-6 {
+    bottom: 415px;
+    left: 400px;
+    transform: translateX(0);
+    opacity: 0;
+    animation: from__left__to__right 1s 2.5s;
+    animation-fill-mode: forwards;//opacity = 1
+    z-index: -2;
+    // background-position: left 27% top;
+    div {
+      height: 7px;
+      width: 62px;
+      background-image: url("../img/main_bird_big.png");
+    }
+  }
+  .layer-7 {
+    bottom: 392px;
+    left: 440px;
+    transform: translateX(0);
+    opacity: 0;
+    animation: from__left__to__right 1s 2s;
+    animation-fill-mode: forwards;//opacity = 1
+    z-index: -2;
+    // background-position: left 29% top;
+    div {
+      height: 3px;
+      width: 32px;
+      background-image: url("../img/main_bird_small.png");
+    }
+  }
+  .layer-8 {
+    height: 110px;
+    width: 253px;
+    bottom: 20px;
+    left: 250px;
+    background-image: url("../img/truck_all_sscreen.png");
+    transform: translateX(0);
+    animation: truck__move 4s ease-in-out;
+    // background-position: left 250px top;
+  }
+}
