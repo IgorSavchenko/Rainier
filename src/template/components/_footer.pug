@@ -1,5 +1,5 @@
 mixin footer()
-    footer.footer
+    footer.footer.section.fp-auto-height
       .container
         .footer__block
           .footer__logo
@@ -23,10 +23,10 @@ mixin footer()
               a.social__link(href=`${socialLink1URL}` target="_blank")
                 +svg(`${socialLink1}`)
             li.social__item
-              a.social__link(href=`${socialLink1URL}` target="_blank")
+              a.social__link(href=`${socialLink2URL}` target="_blank")
                 +svg(`${socialLink2}`)
             li.social__item
-              a.social__link(href=`${socialLink1URL}` target="_blank")
+              a.social__link(href=`${socialLink3URL}` target="_blank")
                 +svg(`${socialLink3}`)
         .footer__block
           p= `${copyrightText}`

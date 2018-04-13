@@ -67,6 +67,7 @@ export const winWidth = $window.width();
  * @type {String}
  */
 export const currentPage = $body.find('main').data('page');
+console.log(`currentPage = ${currentPage}`);
 
 /**
  * Toggle class on specified element on click.

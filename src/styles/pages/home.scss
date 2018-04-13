@@ -6,8 +6,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-y: auto;
-  overflow-x: hidden;
+  // overflow-y: auto;
+  overflow: hidden;
   min-height: 567px;
   @include tablet-min {
     min-height: 1022px;
@@ -44,6 +44,7 @@
     line-height: 48px;
     font-weight: 900;
     color: #3d6bc7;
+    text-align: center;
     opacity: 0;
     animation: from__top__to__bottom 1s 0.5s;
     animation-fill-mode: forwards;//opacity = 1
@@ -68,10 +69,12 @@
     position: absolute;
     left: -200px;
     right: 0;
+    bottom: 0;
     height: 100%;
     z-index: -1;
     @include desktop-min {
       left: 0;
+      top: 0;
     }
     @include tv-min {
       left: 250px;

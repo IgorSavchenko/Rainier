@@ -11,8 +11,7 @@ import './components/Common';
 import './components/PublicAPI';
 
 /** Import page controllers */
-import Home from './pages/Home';
-import About from './pages/Page-2';
+import main from './pages/main';
 
 import { currentPage } from './modules/dev/_helpers';
 
@@ -21,8 +20,7 @@ import { currentPage } from './modules/dev/_helpers';
  **/
 switch (currentPage) {
   /** Home page */
-  case 'home': new Home; break;
-  case 'page-2': new Page-2; break;
+  case 'main': new main; break;
 
   /** No page found */
   default: console.warn('Undefined page');
